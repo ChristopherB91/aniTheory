@@ -7,6 +7,7 @@ function App() {
     {
       path: "/",
       element: <Homepage />,
+      errorElement: <>404 Not Found</>,
     },
   ]);
 
