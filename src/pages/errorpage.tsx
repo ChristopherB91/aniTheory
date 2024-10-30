@@ -10,7 +10,7 @@ export const ErrorPage: React.FC = () => {
   console.error(error);
 
   return (
-    <div id="error-page">
+    <div className="text-red-600 flex flex-col items-center">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
