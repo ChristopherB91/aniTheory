@@ -4,6 +4,7 @@ import ichigoIcon from "../assets/profile icons/ichigo_VL.jpg";
 import narutoIcon from "../assets/profile icons/naruto_SM.jpg";
 import starU from "../assets/starNotFavorite.svg";
 import starF from "../assets/starFavorite.svg";
+import { useState } from "react";
 
 interface post {
   profilePic: string;
@@ -12,7 +13,7 @@ interface post {
   favorite: boolean;
 }
 
-const posts: post[] = [
+const initialPosts: post[] = [
   {
     profilePic: `${gokuIcon}`,
     title: "G.O.D Vegeta",
@@ -53,22 +54,35 @@ const posts: post[] = [
 ];
 
 export const Posts = () => {
+  const [posts, setPosts] = useState<post[]>(initialPosts);
+
+  const toggleFavorite = (index: number) => {
+    setPosts((prevPosts) =>
+      prevPosts.map((post, i) =>
+        i === index ? { ...post, favorite: !post.favorite } : post
+      )
+    );
+  };
+
   return (
-    <div className="grid grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
       {posts.map((post, index) => {
         return (
-          <div className="flex text-center items-center text-3xl" key={index}>
+          <div
+            className="flex flex-wrap text-center items-center align-middle text-3xl justify-between sm:flex-nowrap"
+            key={index}
+          >
             <img
               src={post.profilePic}
               alt="profile icon"
               className="rounded-full h-44 max-w-full"
             />
             <h1 className="text-red-600 font-bold">{post.title}</h1>
-            {post.favorite ? (
-              <img src={starF} alt="favorite star" />
-            ) : (
-              <img src={starU} alt="unfavorite star" />
-            )}
+            <input
+              type="image"
+              src={post.favorite ? starU : starF}
+              onClick={() => toggleFavorite(index)}
+            />
           </div>
         );
       })}
