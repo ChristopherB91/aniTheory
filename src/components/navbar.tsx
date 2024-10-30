@@ -1,9 +1,9 @@
-import logo from "../../public/logo.svg";
+import logo from "../assets/logo.svg";
 
 export const Navbar = () => {
   return (
     <>
-      <nav className="border-b-2 border-solid border-b-red-600 flex justify-between items-center font-custom">
+      <nav className="border-b-4 border-solid border-b-red-600 flex justify-between items-center font-custom">
         <img
           src={logo}
           alt="logo"
