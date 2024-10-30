@@ -1,13 +1,20 @@
 import { Homepage } from "./pages/homepage";
 import { Navbar } from "./components/navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Posts } from "./pages/post";
+import { ErrorPage } from "./pages/errorpage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Homepage />,
-      errorElement: <>404 Not Found</>,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/post",
+      element: <Posts />,
+      errorElement: <ErrorPage />,
     },
   ]);
 
