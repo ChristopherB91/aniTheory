@@ -3,6 +3,7 @@ import { Navbar } from "./components/navbar";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Posts } from "./pages/post";
 import { ErrorPage } from "./pages/errorpage";
+import { Contact } from "./pages/contact";
 
 const Layout = () => (
   <>
@@ -18,6 +19,7 @@ function App() {
       children: [
         { path: "/", element: <Homepage /> },
         { path: "/posts", element: <Posts /> },
+        { path: "/contact", element: <Contact /> },
       ],
       errorElement: <ErrorPage />,
     },
