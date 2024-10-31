@@ -17,7 +17,9 @@ export const Navbar: React.FC = () => {
             <Link to="posts">Post</Link>
           </li>
           <li>Favorites</li>
-          <li>Contact</li>
+          <li>
+            <Link to="contact">Contact</Link>
+          </li>
         </ul>
       </nav>
     </>
