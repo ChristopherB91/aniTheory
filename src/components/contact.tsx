@@ -41,23 +41,30 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={sendEmail}
-      className="gap-5 text-red-600 flex flex-col items-center font-bold rounded-xl border-red-600 border-2 border-solid w-2/4"
+      className="gap-5 text-red-600 flex flex-col items-center font-bold py-4 px-2 rounded-r border-red-600 border-2 border-solid w-3/4 sm:w-2/4"
     >
       <label>Name</label>
-      <input type="text" name="user_name" className="text-black font-normal" />
+      <input
+        type="text"
+        name="user_name"
+        className="text-black font-normal w-full sm:w-2/4"
+      />
       <label>Email</label>
       <input
         type="email"
         name="user_email"
-        className="text-black font-normal"
+        className="text-black font-normal w-full sm:w-2/4"
       />
       <label>Message</label>
-      <textarea name="message" className="text-black font-normal" />
+      <textarea
+        name="message"
+        className="text-black font-normal w-full sm:w-2/4"
+      />
       <input
         type="submit"
         value="Send"
         disabled={isSubmitting}
-        className="p-4 rounded-xl border-red-600 border-2 border-solid"
+        className="p-4 rounded-xl border-red-600 border-2 border-solid hover:text-white w-full sm:w-32"
       />
       {stateMessage && <p>{stateMessage}</p>}
     </form>
