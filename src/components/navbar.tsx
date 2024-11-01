@@ -14,11 +14,21 @@ export const Navbar: React.FC = () => {
         </Link>
         <ul className="list-none font-bold text-red-600 text-3xl flex flex-wrap gap-2 justify-center">
           <li>
-            <Link to="posts">Post</Link>
+            <Link
+              to="posts"
+              className="active:text-red-500 hover:text-red-500 hover:text-4xl transition-all"
+            >
+              Post
+            </Link>
           </li>
           <li>Favorites</li>
           <li>
-            <Link to="contact">Contact</Link>
+            <Link
+              to="contact"
+              className="active:text-red-500 hover:text-red-500 hover:text-4xl transition-all"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
