@@ -63,11 +63,11 @@ export const Posts = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 flex-grow">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 flex-grow">
       {posts.map((post, index) => {
         return (
           <div
-            className="flex flex-wrap text-center items-center align-middle text-3xl justify-between sm:flex-nowrap"
+            className="flex text-wrap text-center flex-col items-center text-xl justify-center sm:flex-row sm:justify-between sm:text-3xl"
             key={index}
           >
             <img
@@ -78,6 +78,7 @@ export const Posts = () => {
             <h1 className="text-red-600 font-bold">{post.title}</h1>
             <input
               type="image"
+              className="w-16 sm:w-auto"
               src={post.favorite ? starU : starF}
               onClick={() => toggleFavorite(index)}
             />
