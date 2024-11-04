@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Posts } from "./pages/post";
 import { ErrorPage } from "./pages/errorpage";
 import { Contact } from "./pages/contact";
+import { PostProvider } from "./context/posts";
+import { Favorite } from "./pages/favorites";
 
 const Layout = () => (
   <>
@@ -20,6 +22,7 @@ function App() {
         { path: "/", element: <Homepage /> },
         { path: "/posts", element: <Posts /> },
         { path: "/contact", element: <Contact /> },
+        { path: "/favorite", element: <Favorite /> },
       ],
       errorElement: <ErrorPage />,
     },
@@ -28,7 +31,9 @@ function App() {
   return (
     <>
       <div className="m-0 p-0 h-full box-border flex flex-col">
-        <RouterProvider router={router} />
+        <PostProvider>
+          <RouterProvider router={router} />
+        </PostProvider>
       </div>
     </>
   );
