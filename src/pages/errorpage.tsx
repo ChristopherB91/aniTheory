@@ -10,15 +10,17 @@ export const ErrorPage: React.FC = () => {
   console.error(error);
 
   return (
-    <div className="text-red-600 flex flex-col items-center">
+    <div className="text-red-600 flex flex-col items-center flex-grow justify-center">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
         <i>{error.status || error.message}</i>
       </p>
-      <button className="p-4 border-solid border-red-600 border-2 rounded-2xl">
-        <Link to="/">Click here to return</Link>
-      </button>
+      <Link to="/">
+        <button className="p-4 border-solid border-red-600 border-2 rounded-2xl">
+          Click here to return
+        </button>
+      </Link>
     </div>
   );
 };
