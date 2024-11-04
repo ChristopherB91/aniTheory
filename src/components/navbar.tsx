@@ -21,7 +21,14 @@ export const Navbar: React.FC = () => {
               Post
             </Link>
           </li>
-          <li>Favorites</li>
+          <li>
+            <Link
+              to="favorite"
+              className="active:text-red-500 hover:text-red-500 hover:text-4xl transition-all"
+            >
+              Favorites
+            </Link>
+          </li>
           <li>
             <Link
               to="contact"
