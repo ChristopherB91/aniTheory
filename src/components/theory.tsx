@@ -10,13 +10,13 @@ export const TheoryDisplay = () => {
   }
   const { display } = context;
   return (
-    <div className="flex flex-grow">
-      <div className="text-red-600 text-wrap text-center items-center text-xl justify-center sm:flex-row sm:justify-between sm:text-3xl">
-        <div className="flex text-center items-center justify-around">
+    <div className="flex flex-grow items-start justify-center gap-10">
+      <div className="text-red-600 text-wrap text-center items-center justify-center w-3/4 border-solid border-2 border-red-600 sm:w-2/4">
+        <div className="flex text-center items-center justify-around text-xl flex-col border-solid border-b-4 border-red-600 sm:flex-row sm:border-none sm:text-3xl">
           <img
             src={display?.profilePic}
             alt="profilePic"
-            className="rounded-full h-44 max-w-full"
+            className="rounded-full h-28 max-w-full"
           />
           <h1>{display?.title}</h1>
           <img
@@ -25,7 +25,7 @@ export const TheoryDisplay = () => {
             className="w-14 sm:w-auto"
           />
         </div>
-        {display?.body}
+        <p className="text-xl">{display?.body}</p>
       </div>
     </div>
   );
