@@ -17,7 +17,9 @@ interface PostProviderProps {
 
 interface PostContextType {
   posts: post[];
+  display: post | undefined;
   toggleFavorite: (index: number) => void;
+  displaying: (index: number) => void;
 }
 
 export const PostContext = createContext<PostContextType | undefined>(
@@ -65,6 +67,8 @@ export const PostProvider: React.FC<PostProviderProps> = ({ children }) => {
     },
   ]);
 
+  const [display, setDisplay] = useState<post | undefined>(undefined);
+
   const toggleFavorite = (index: number) => {
     setPosts((prevPosts) =>
       prevPosts.map((post, i) =>
@@ -73,8 +77,15 @@ export const PostProvider: React.FC<PostProviderProps> = ({ children }) => {
     );
   };
 
+  const displaying = (index: number) => {
+    setDisplay(posts[index]);
+    console.log(display);
+  };
+
   return (
-    <PostContext.Provider value={{ posts, toggleFavorite }}>
+    <PostContext.Provider
+      value={{ posts, display, displaying, toggleFavorite }}
+    >
       {children}
     </PostContext.Provider>
   );
