@@ -6,6 +6,7 @@ import { ErrorPage } from "./pages/errorpage";
 import { Contact } from "./pages/contact";
 import { PostProvider } from "./context/posts";
 import { Favorite } from "./pages/favorites";
+import { TheoryDisplay } from "./components/theory";
 
 const Layout = () => (
   <>
@@ -23,6 +24,7 @@ function App() {
         { path: "/posts", element: <Posts /> },
         { path: "/contact", element: <Contact /> },
         { path: "/favorite", element: <Favorite /> },
+        { path: "/theory", element: <TheoryDisplay /> },
       ],
       errorElement: <ErrorPage />,
     },
