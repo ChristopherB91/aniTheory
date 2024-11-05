@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { PostContext } from "../context/posts";
 import starF from "../assets/starNotFavorite.svg";
+import { Link } from "react-router-dom";
 
 export const Favorite = () => {
   const context = useContext(PostContext);
@@ -8,7 +9,7 @@ export const Favorite = () => {
     throw new Error("null");
   }
 
-  const { posts, toggleFavorite } = context;
+  const { posts, toggleFavorite, displaying } = context;
 
   return (
     <>
@@ -24,7 +25,14 @@ export const Favorite = () => {
                 alt="profile icon"
                 className="rounded-full h-44 max-w-full"
               />
-              <h1 className="text-red-600 font-bold">{post.title}</h1>
+              <Link to="/theory">
+                <h1
+                  className="text-red-600 hover:text-red-500 font-bold"
+                  onClick={() => displaying(index)}
+                >
+                  {post.title}
+                </h1>
+              </Link>
               <input
                 type="image"
                 className="w-16 sm:w-auto"

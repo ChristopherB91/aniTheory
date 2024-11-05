@@ -2,6 +2,7 @@ import starU from "../assets/starNotFavorite.svg";
 import starF from "../assets/starFavorite.svg";
 import { useContext } from "react";
 import { PostContext } from "../context/posts";
+import { Link } from "react-router-dom";
 
 export const Posts = () => {
   const context = useContext(PostContext);
@@ -9,7 +10,7 @@ export const Posts = () => {
     throw new Error("null");
   }
 
-  const { posts, toggleFavorite } = context;
+  const { posts, toggleFavorite, displaying } = context;
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 flex-grow sm:gap-5">
@@ -24,7 +25,14 @@ export const Posts = () => {
               alt="profile icon"
               className="rounded-full h-44 max-w-full"
             />
-            <h1 className="text-red-600 font-bold">{post.title}</h1>
+            <Link to="/theory">
+              <h1
+                className="hover:text-red-500 text-red-600 font-bold"
+                onClick={() => displaying(index)}
+              >
+                {post.title}
+              </h1>
+            </Link>
             <input
               type="image"
               className="w-16 sm:w-auto"
