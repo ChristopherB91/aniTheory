@@ -6,7 +6,7 @@ import { ErrorPage } from "./pages/errorpage";
 import { Contact } from "./pages/contact";
 import { PostProvider } from "./context/posts";
 import { Favorite } from "./pages/favorites";
-import { TheoryDisplay } from "./components/theory";
+import { TheoryDisplay } from "./pages/theory";
 
 const Layout = () => (
   <>
