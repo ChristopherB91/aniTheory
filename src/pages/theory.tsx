@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { PostContext } from "../context/posts";
+import { CommentSection } from "../components/comment";
 import starU from "../assets/starNotFavorite.svg";
 import starF from "../assets/starFavorite.svg";
 
@@ -10,7 +11,7 @@ export const TheoryDisplay = () => {
   }
   const { display } = context;
   return (
-    <div className="flex flex-grow items-start justify-center gap-10">
+    <div className="flex flex-grow items-center justify-around gap-10 flex-col">
       <div className="text-red-600 text-wrap text-center items-center justify-center w-3/4 border-solid border-2 border-red-600 sm:w-2/4">
         <div className="flex text-center items-center justify-around text-xl flex-col border-solid border-b-4 border-red-600 sm:flex-row sm:border-none sm:text-3xl">
           <img
@@ -27,6 +28,7 @@ export const TheoryDisplay = () => {
         </div>
         <p className="text-xl">{display?.body}</p>
       </div>
+      <CommentSection />
     </div>
   );
 };
