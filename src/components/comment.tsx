@@ -11,7 +11,7 @@ export const CommentSection = () => {
   };
 
   return (
-    <>
+    <div className=" border-solid border-red-600 border-2 w-10/12 rounded-t-2xl md:absolute md:bottom-0 lg:h-2/6 lg:w-2/4">
       <form
         onSubmit={(e) => submit(e)}
         className="w-full flex flex-col items-center"
@@ -22,19 +22,21 @@ export const CommentSection = () => {
           placeholder="Comment"
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
+          aria-label="comment field"
         />
         <button
           type="submit"
-          className="peer-focus:visible invisible border-red-600 border-solid border-2 text-xs text-white w-3/12 sm:text-base sm:w-1/12"
+          aria-label="Post comment button"
+          className=" border-red-600 border-solid border-2 text-xs text-white w-3/12 sm:text-base sm:w-1/12"
         >
           Post
         </button>
       </form>
       {comments.map((comment, index) => (
-        <div className="text-red-600" key={index}>
+        <div className="text-red-600 text-left" key={index}>
           {comment}
         </div>
       ))}
-    </>
+    </div>
   );
 };
