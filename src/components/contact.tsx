@@ -70,7 +70,7 @@ const ContactForm = () => {
         type="submit"
         value="Send"
         disabled={isSubmitting}
-        className="p-4 rounded-xl border-red-600 border-2 border-solid hover:text-white w-full sm:w-32"
+        className="p-4 rounded-xl border-red-600 border-2 border-solid hover:text-white hover:border-white hover:p-5 transition-all w-full sm:w-32"
       />
       {stateMessage && <p>{stateMessage}</p>}
     </form>

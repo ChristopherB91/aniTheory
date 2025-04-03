@@ -17,7 +17,7 @@ export const ErrorPage: React.FC = () => {
         <i>{error.status || error.message}</i>
       </p>
       <Link to="/">
-        <button className="p-4 border-solid border-red-600 border-2 rounded-2xl">
+        <button className="p-4 border-solid border-red-600 border-2 rounded-2xl hover:text-white hover:border-white hover:p-6 transition-all">
           Click here to return
         </button>
       </Link>
