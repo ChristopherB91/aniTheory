@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Posts } from "./pages/post";
 import { ErrorPage } from "./pages/errorpage";
 import { Contact } from "./pages/contact";
-import { PostProvider } from "./context/posts";
+import { PostProvider } from "./context/postsProvider";
 import { Favorite } from "./pages/favorites";
 import { TheoryDisplay } from "./pages/theory";
 

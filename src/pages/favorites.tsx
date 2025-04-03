@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PostContext } from "../context/posts";
+import { PostContext } from "../context/postsContext";
 import starF from "../assets/starNotFavorite.svg";
 import { Link } from "react-router-dom";
 

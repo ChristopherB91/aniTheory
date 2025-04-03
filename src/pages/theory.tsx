@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PostContext } from "../context/posts";
+import { PostContext } from "../context/postsContext";
 import { CommentSection } from "../components/comment";
 import starU from "../assets/starNotFavorite.svg";
 import starF from "../assets/starFavorite.svg";

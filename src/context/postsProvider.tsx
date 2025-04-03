@@ -1,8 +1,9 @@
-import { createContext, ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 import gokuIcon from "../assets/profile icons/goku_SSJ.jpg";
 import luffyIcon from "../assets/profile icons/luffy_g5.jpg";
 import ichigoIcon from "../assets/profile icons/ichigo_VL.jpg";
 import narutoIcon from "../assets/profile icons/naruto_SM.jpg";
+import { PostContext } from "./postsContext";
 
 interface post {
   profilePic: string;
@@ -14,17 +15,6 @@ interface post {
 interface PostProviderProps {
   children: ReactNode;
 }
-
-interface PostContextType {
-  posts: post[];
-  display: post | undefined;
-  toggleFavorite: (index: number) => void;
-  displaying: (index: number) => void;
-}
-
-export const PostContext = createContext<PostContextType | undefined>(
-  undefined
-);
 
 export const PostProvider: React.FC<PostProviderProps> = ({ children }) => {
   const [posts, setPosts] = useState<post[]>([

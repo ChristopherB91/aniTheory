@@ -1,7 +1,7 @@
 import starU from "../assets/starNotFavorite.svg";
 import starF from "../assets/starFavorite.svg";
 import { useContext } from "react";
-import { PostContext } from "../context/posts";
+import { PostContext } from "../context/postsContext";
 import { Link } from "react-router-dom";
 
 export const Posts = () => {
